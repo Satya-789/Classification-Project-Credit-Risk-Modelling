@@ -1,44 +1,57 @@
-📄 Credit Risk Modeling Project
+📄 CREDIT RISK MODELING PROJECT
 🎯 Project Overview
-This repository contains a comprehensive Credit Risk Modeling project developed within the Jupyter Notebook credit_risk_model.ipynb.
 
-The primary objective is to build a machine learning classification model to predict the probability of credit default (i.e., whether a customer will fail to repay a loan). The notebook covers the complete data science lifecycle, from data ingestion and cleaning to model training and persistence.
+This repository contains a comprehensive Credit Risk Modeling project, developed in the Jupyter Notebook credit_risk_model.ipynb.
+
+The goal is to predict the probability of loan default (whether a customer will fail to repay).
+The notebook covers the full Data Science lifecycle: data ingestion ➝ cleaning ➝ feature engineering ➝ model training ➝ evaluation ➝ deployment.
 
 💾 Data Sources
-The model is built by combining data from three distinct CSV files, which should be placed in the same directory as the notebook. All files are joined on the common identifier cust_id.
 
-File Name	Content Description	Key Information
-customers.csv	Customer demographic and financial information.	Age, Income, Residence Details.
-loans.csv	Loan application details and the target variable.	Loan Amount, Tenure, Target: default (1=Default, 0=No Default).
-bureau_data.csv	Customer's credit history details.	Total DPD, Enquiry Count, Credit Utilization Ratio.
+The model uses three CSV files, joined by the key cust_id.
+Ensure these files are placed in the same directory as the notebook.
 
-
+File Name	Description	Key Features
+customers.csv	Customer demographics & financial details	Age, Income, Residence Details
+loans.csv	Loan application info & target variable	Loan Amount, Tenure, Default (0/1)
+bureau_data.csv	Credit bureau history	Total DPD, Enquiry Count, Utilization
 💻 Workflow Highlights
-The credit_risk_model.ipynb notebook executes the following critical steps:
 
-Data Loading & Merging: Ingestion of the three source files and creation of a unified master DataFrame.
+The notebook executes the following critical steps:
 
-Strategic Splitting: The data is split into training and testing sets early in the process to prevent data leakage during feature engineering.
+Data Loading & Merging → Combine the three datasets into a single master DataFrame.
 
-Data Cleaning: Handles missing values (e.g., imputation of residence_type with the mode 'Owned') and removal of duplicates.
+Strategic Splitting → Train-test split early to prevent data leakage.
 
-Feature Engineering: Creation of derived features such as loan_to_income_ratio and age_at_loan_end.
+Data Cleaning → Handle missing values (e.g., impute residence_type with "Owned"), remove duplicates.
 
-Encoding & Scaling:
+Feature Engineering → Create features like loan_to_income_ratio and age_at_loan_end.
 
-Target Encoding for high-cardinality features (city, state).
+Encoding & Scaling
 
-One-Hot Encoding for other nominal features.
+Target Encoding for high-cardinality (city, state).
+
+One-Hot Encoding for nominal features.
 
 Standard Scaling for numerical features.
 
-Model Training: The predictive model is built using the Logistic Regression algorithm.
+Model Training → Logistic Regression for predicting default probability.
 
-Evaluation: The model performance is assessed using industry-standard metrics, primarily the AUC Score, alongside the Confusion Matrix and Classification Report.
+Evaluation → Metrics include:
 
-Model Persistence: The final trained model, the list of features, and the fitted scaler are serialized and saved for future deployment.
+✅ AUC Score
 
-Try it here:- https://classification-project-credit-risk-modelling.streamlit.app/
+✅ Confusion Matrix
 
-Model Persistence: The final trained model, the list of features, and the fitted scaler are serialized and saved for future deployment.
+✅ Classification Report
+
+Model Persistence → Save trained model, feature list, and scaler for deployment.
+
+🚀 Live Demo
+
+👉 Try the interactive Streamlit app here:
+🔗 Credit Risk Modeling App- https://classification-project-credit-risk-modelling.streamlit.app/
+
+
+
 
